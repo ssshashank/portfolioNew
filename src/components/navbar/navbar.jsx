@@ -1,19 +1,27 @@
 import classNames from "classnames";
-import NavbarStyle from "./navbar.module.css";
+import "./navbar.css";
 import { ReactComponent as HeadingIconSVG } from "@assets/svg/icon.svg";
+const navClass = classNames(`nav py-10 box-border z-0`);
+const checkBoxClass = classNames("checkbox4 hidden");
+const hamburgerClass = classNames("hamburger hamburger4");
+const bar1Class = classNames("bar bar1");
+const bar2Class = classNames("bar bar2");
+const bar3Class = classNames("bar bar3");
+const bar4Class = classNames("bar bar4");
+const bar5Class = classNames("bar bar5");
 
 const Navbar = () => {
 	return (
-		<nav className='flex sm:justify-center space-x-4'>
-			<h1 className='text-fontsize-strong cursor-pointer'>Hello world!</h1>
-			<div>
+		<nav className={navClass}>
+			<div className='logo'>
 				<a href='#'>
 					<HeadingIconSVG />
 				</a>
 			</div>
 			{/* <div class='content-nav'>
-				<div class='social'>
+				<div className='social'>
 					<a
+						className='socialLink'
 						href='https://www.twitter.com/adriengervaix'
 						target='_blank'
 						rel='noreferrer'>
@@ -25,6 +33,7 @@ const Navbar = () => {
 						</svg>
 					</a>
 					<a
+						className='socialLink'
 						href='https://www.dribbble.com/adriengervaix'
 						target='_blank'
 						rel='noreferrer'>
@@ -36,6 +45,7 @@ const Navbar = () => {
 						</svg>
 					</a>
 					<a
+						className='socialLink'
 						href='https://www.instagram.com/adriengervaix'
 						target='_blank'
 						rel='noreferrer'>
@@ -47,18 +57,19 @@ const Navbar = () => {
 						</svg>
 					</a>
 				</div>
-				<div class='menu'>
-					<a href='about.html'>
-						About &amp;Services
-						<svg width='20' height='11' xmlns='http://www.w3.org/2000/svg'>
-							<path
-								d='M14.285.668l-.506.506 4.146 4.148H.392v.717h17.533l-4.146 4.147.506.506 5.012-5.012z'
-								fill='#F3F2F4'
-								fill-rule='evenodd'></path>
-						</svg>
-					</a>
-				</div>
 			</div> */}
+			<div className='menu'>
+				<input type='checkbox' id='checkbox4' className={checkBoxClass} />
+				<label htmlFor='checkbox4'>
+					<div className={hamburgerClass}>
+						<span className={bar1Class}></span>
+						<span className={bar2Class}></span>
+						<span className={bar3Class}></span>
+						<span className={bar4Class}></span>
+						<span className={bar5Class}></span>
+					</div>
+				</label>
+			</div>
 		</nav>
 	);
 };
