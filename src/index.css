@@ -6,7 +6,7 @@
 	--color-primary: #4110e7;
 	--color-ternary: #f3f2f4;
 	--color-secondary: #8bf172;
-	--color-primaryDark: #18033b;
+	--color-primaryDark: #110525;
 	--color-purity: #fff;
 	--color-dark: #000;
 	--color-ebony: #5c5b5b;
@@ -35,6 +35,6 @@
 	overflow-x: hidden;
 }
 body {
-	background: var(--color-primary);
+	background: var(--color-primaryDark);
 	color: var(--color-ternary);
 }
