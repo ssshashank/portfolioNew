@@ -1,0 +1,19 @@
+.glassmorph {
+	height: 100vh;
+	/* From https://css.glass */
+	background: var(--color-leather);
+	/* 
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(6.5px);
+	-webkit-backdrop-filter: blur(6.5px); */
+}
+
+.aside1 {
+	height: 100vh;
+	background: var(--color-ternary);
+}
+
+.aside2 {
+	height: 100vh;
+	background: var(--color-primaryDark);
+}

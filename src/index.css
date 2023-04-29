@@ -4,7 +4,7 @@
 
 :root {
 	--color-primary: #4110e7;
-	--color-ternary: #f3f2f4;
+	--color-ternary: #eea0be;
 	--color-secondary: #8bf172;
 	--color-primaryDark: #110525;
 	--color-purity: #fff;
@@ -32,9 +32,10 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 body {
-	background: var(--color-primaryDark);
-	color: var(--color-ternary);
+	background: var(--color-primary);
+	color: var(--color-secondary);
+	cursor: pointer;
 }

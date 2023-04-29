@@ -3,12 +3,12 @@ nav {
 	margin: auto;
 	box-sizing: border-box;
 	display: flex;
-
 	justify-content: space-between;
-	z-index: 0;
 	animation: opacity-menu 1200ms;
 }
+
 nav .logo {
+	z-index: 1;
 	display: flex;
 	align-items: center;
 }
@@ -66,7 +66,7 @@ nav .content-nav .social a:nth-child(2) {
 nav .content-nav .social a:before {
 	content: "";
 	background-color: #eea1be;
-	border-radius: 20px;
+	/* border-radius: 20px; */
 	height: 40px;
 	width: 40px;
 	position: absolute;
@@ -85,30 +85,14 @@ nav .content-nav .social a svg {
 	align-self: center;
 	z-index: 20;
 }
-/* nav .menu {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 60px;
-	border-radius: 50%;
-	height: 60px;
-} */
-/* nav .menu:hover {
-	background-color: grey;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	transition: all 0.5s ease-in-out;
-} */
 
 .hamburger {
+	z-index: 1;
 	border-radius: 5px;
 	width: 38px;
 	height: 30px;
 	position: relative;
+	/* border-radius: 50%; */
 	cursor: pointer;
 }
 
@@ -118,10 +102,10 @@ nav .content-nav .social a svg {
 	display: flex;
 	justify-content: center;
 	align-self: center;
-	height: 3px;
+	height: 4px;
 	background-color: var(--color-secondary);
 	display: block;
-	border-radius: 2px;
+	border-radius: 50%;
 	transition: all 0.4s ease-in-out;
 	position: absolute;
 }
