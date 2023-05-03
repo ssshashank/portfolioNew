@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-	--color-primary: #4110e7;
+	--color-primary: #fbff06;
 	--color-ternary: #eea0be;
 	--color-secondary: #8bf172;
+	--color-magento: #f25824;
 	--color-primaryDark: #110525;
 	--color-purity: #fff;
 	--color-dark: #000;
@@ -15,6 +16,10 @@
 	--color-raven: #050301;
 	--color-leather: #0b0705;
 	--color-pulp: #f7edc9;
+	--color-AthsSpecial: #ebe5cd;
+	--color-rangitoto: #363f2c;
+	--color-naturalGrey: #969285;
+	--color-chambray: #3b618c;
 	--fontsize-strong: 40px;
 	--fontsize-tough: 32px;
 	--fontsize-pearl: 28px;
@@ -33,6 +38,9 @@
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 	/* overflow-x: hidden; */
+	font-family: "Caveat", cursive;
+	font-family: "Inter", sans-serif;
+	font-family: "Ubuntu", sans-serif;
 }
 body {
 	background: var(--color-primary);

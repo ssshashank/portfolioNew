@@ -10,10 +10,24 @@
 
 .aside1 {
 	height: 100vh;
-	background: var(--color-ternary);
+	background: var(--color-magento);
 }
 
 .aside2 {
 	height: 100vh;
-	background: var(--color-primaryDark);
+	background: var(--color-chambray);
+}
+.aside3 {
+	height: 100vh;
+	background: var(--color-leather);
+}
+
+.sidebar {
+	padding-top: 200px;
+	border: 2px solid red;
+	height: 100vh;
+}
+
+.sidebarBody {
+	display: block;
 }

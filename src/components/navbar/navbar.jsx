@@ -1,27 +1,38 @@
 import classNames from "classnames";
 import "./navbar.css";
-import { ReactComponent as HeadingIconSVG } from "@assets/svg/icon.svg";
 import Sidebar from "@components/sidebar/sidebar";
-import { motion, spring } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
-
-const navClass = classNames(`nav  py-10 box-border z-0`);
-const checkBoxClass = classNames("checkbox4 hidden");
-const hamburgerClass = classNames("hamburger hamburger4");
-const bar1Class = classNames("bar bar1");
-const bar2Class = classNames("bar bar2");
-const bar3Class = classNames("bar bar3");
-const bar4Class = classNames("bar bar4");
-const bar5Class = classNames("bar bar5");
+import HomeImage from "@assets/images/house.png";
+import HomeSidebarImage from "@assets/images/homeSidebar.png";
 
 const Navbar = () => {
 	const [showSidebar, setSidebar] = useState(false);
+	const navClass = classNames(`nav  py-10 box-border z-0`);
+	const checkBoxClass = classNames("checkbox4 hidden");
+	const hamburgerClass = classNames("hamburger hamburger4");
+	const bar1Class = classNames(`bar bar1`);
+	const bar2Class = classNames(
+		showSidebar ? `barUpdatedState bar2` : "bar bar2"
+	);
+	const bar3Class = classNames(
+		showSidebar ? `barUpdatedState bar3` : "bar bar3"
+	);
+	const bar4Class = classNames("bar bar4");
+	const bar5Class = classNames("bar bar5");
 	return (
 		<div>
 			<nav className={navClass}>
 				<div className='logo'>
 					<a href='#'>
-						<HeadingIconSVG />
+						<motion.img
+							className='homeIcon'
+							src={!showSidebar ? HomeImage : HomeSidebarImage}
+							width={45}
+						/>
+						<span className='overlay'>
+							<span className='text'>S</span>
+						</span>
 					</a>
 				</div>
 
