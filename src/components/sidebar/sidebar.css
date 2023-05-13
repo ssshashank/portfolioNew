@@ -34,11 +34,9 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	/* margin-left: 10%; */
-	/* line-height: 80px; */
+
 	font-size: 80px;
-	/* -webkit-text-fill-color: transparent;
-	-webkit-text-stroke: 1px; */
+
 	color: var(--color-primary);
 }
 

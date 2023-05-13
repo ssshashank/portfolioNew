@@ -1,0 +1,10 @@
+.loadingContainer {
+	height: 100vh;
+	width: 100%;
+	background: var(--color-light-olive);
+}
+
+.counter {
+	font-size: 10rem;
+	font-weight: 400;
+}

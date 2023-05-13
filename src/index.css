@@ -33,7 +33,7 @@
 }
 
 * {
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	word-wrap: break-word;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -48,6 +48,6 @@
 }
 body {
 	background: var(--color-darkFade);
-	color: var(--color-secondary);
+	/* color: var(--color-secondary); */
 	cursor: pointer;
 }
