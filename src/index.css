@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 :root {
-	--color-primary: #fbff06;
+	--color-primary: #cfca16;
 	--color-ternary: #eea0be;
 	--color-secondary: #8bf172;
+	--color-light-olive: #e7e8d1;
+	--color-light-teal: #a7beae;
 	--color-magento: #f25824;
 	--color-primaryDark: #110525;
 	--color-purity: #fff;
 	--color-dark: #000;
 	--color-ebony: #5c5b5b;
+	--color-darkFade: #181817;
 	--color-metal: #969696;
 	--color-jade: #313131;
 	--color-raven: #050301;
@@ -41,9 +44,10 @@
 	font-family: "Caveat", cursive;
 	font-family: "Inter", sans-serif;
 	font-family: "Ubuntu", sans-serif;
+	font-family: "Oranienbaum", serif;
 }
 body {
-	background: var(--color-primary);
+	background: var(--color-darkFade);
 	color: var(--color-secondary);
 	cursor: pointer;
 }

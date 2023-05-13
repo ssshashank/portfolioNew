@@ -1,14 +1,7 @@
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { Bounce, Circ, Sine } from "gsap";
 import "./sidebar.css";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
-import { color } from "framer-motion";
-
-const links = [
-	{ name: "Home", to: "#", id: 1 },
-	{ name: "About", to: "#", id: 2 },
-	{ name: "Blog", to: "#", id: 3 },
-	{ name: "Contact", to: "#", id: 4 },
-];
+import { Power3 } from "gsap";
 
 const itemVariants = {
 	closed: {
@@ -33,9 +26,24 @@ const sideVariants = {
 };
 
 const aside = [
-	{ id: 1, label: "Aside1", class: "aside1", delay: ".7", delayStart: "0.3" },
+	{
+		id: 1,
+		label: "Aside1",
+		class: "aside1",
+		delay: ".7",
+		delayStart: "0.3",
+		// entryEase: ,
+		// exitEase: "",
+	},
 	{ id: 2, label: "Aside2", class: "aside2", delay: ".5", delayStart: "0.5" },
-	{ id: 3, label: "Aside3", class: "aside3", delay: ".3", delayStart: "0.7" },
+	{
+		id: 3,
+		label: "Aside3",
+		class: "aside3",
+		delay: ".3",
+		delayStart: "0.7",
+		// entryEase: Circ.easeOut,
+	},
 ];
 
 const Sidebar = ({ showSidebar }) => {
@@ -55,13 +63,18 @@ const Sidebar = ({ showSidebar }) => {
 						animate={{
 							width: "100vw",
 							zIndex: 0,
-							transition: { duration: 0.3, delay: item?.delayStart },
+							transition: {
+								duration: 2.5,
+								delay: item?.delayStart,
+								ease: Bounce.easeOut,
+							},
 						}}
 						exit={{
 							width: 0,
 							transition: {
 								duration: 0.3,
 								delay: item?.delay,
+								ease: Power3.easeOut,
 							},
 						}}>
 						{index === aside?.length - 1 && (
@@ -72,15 +85,7 @@ const Sidebar = ({ showSidebar }) => {
 								variants={sideVariants}
 								className='sidebar'>
 								<div className='sidebarBody'>
-									{links.map(({ name, to, id }) => (
-										<motion.a
-											key={id}
-											href={to}
-											whileHover={{ scale: 1.1 }}
-											variants={itemVariants}>
-											{name}
-										</motion.a>
-									))}
+									<h1>Hello</h1>
 								</div>
 							</motion.div>
 						)}

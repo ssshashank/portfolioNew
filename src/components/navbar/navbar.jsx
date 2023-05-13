@@ -1,10 +1,9 @@
 import classNames from "classnames";
 import "./navbar.css";
 import Sidebar from "@components/sidebar/sidebar";
-import { motion } from "framer-motion";
+import { motion, spring } from "framer-motion";
 import { useState } from "react";
-import HomeImage from "@assets/images/house.png";
-import HomeSidebarImage from "@assets/images/homeSidebar.png";
+import { Elastic } from "gsap";
 
 const Navbar = () => {
 	const [showSidebar, setSidebar] = useState(false);
@@ -25,14 +24,50 @@ const Navbar = () => {
 			<nav className={navClass}>
 				<div className='logo'>
 					<a href='#'>
-						<motion.img
-							className='homeIcon'
-							src={!showSidebar ? HomeImage : HomeSidebarImage}
-							width={45}
-						/>
-						<span className='overlay'>
-							<span className='text'>S</span>
-						</span>
+						<motion.svg
+							width='100'
+							height='9'
+							viewBox='0 0 60 9'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'>
+							<motion.rect
+								width='44'
+								height='9'
+								rx='0'
+								fill='#CFCA16'
+								animate={{
+									x: [10, -10, 10],
+									transition: {
+										duration: 1.3,
+										ease: "linear",
+										repeat: Infinity,
+										repeatType: "mirror",
+									},
+								}}
+							/>
+							<motion.circle
+								cx='55.5'
+								cy='4.5'
+								r='4.5'
+								fill='#CFCA16'
+								animate={{
+									opacity: 1,
+									scale: 1,
+									x: [0, 10, 0],
+								}}
+								transition={{
+									duration: 1.3,
+									easings: Elastic.easeIn,
+									repeat: Infinity,
+									repeatType: "loop",
+									damping: 5,
+									mass: 0.5,
+									type: spring,
+									bounce: 0.25,
+									restDelta: 0.001,
+								}}
+							/>
+						</motion.svg>
 					</a>
 				</div>
 
@@ -40,16 +75,16 @@ const Navbar = () => {
 					<input type='checkbox' id='checkbox4' className={checkBoxClass} />
 					<label htmlFor='checkbox4'>
 						<motion.div
-							whileHover={{
-								rotate: "90deg",
-								transition: {
-									duration: 1,
-									damping: 5,
-									mass: 0.5,
-									type: "spring",
-									bounce: 0.25,
-								},
-							}}
+							// whileHover={{
+							// 	rotate: "90deg",
+							// 	transition: {
+							// 		duration: 1,
+							// 		damping: 5,
+							// 		mass: 0.5,
+							// 		type: "spring",
+							// 		bounce: 0.25,
+							// 	},
+							// }}
 							whileTap={{ scale: 0.8 }}
 							className={hamburgerClass}
 							onClick={() => setSidebar((prev) => (prev = !prev))}>

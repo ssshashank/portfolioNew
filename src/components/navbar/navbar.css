@@ -1,5 +1,5 @@
 nav {
-	width: 80%;
+	width: 85%;
 	margin: auto;
 	box-sizing: border-box;
 	display: flex;
@@ -85,7 +85,7 @@ nav .content-nav .social a svg {
 	align-self: center;
 	z-index: 20;
 }
-.overlay {
+/* .overlay {
 	position: absolute;
 	top: 0;
 	margin-top: 35px;
@@ -99,12 +99,12 @@ nav .content-nav .social a svg {
 .logo:hover .overlay {
 	opacity: 1;
 	transition: 0.3s ease;
-}
+} */
 
-.logo:hover .homeIcon {
+/* .logo:hover .homeIcon {
 	opacity: 0;
 	transition: all 0.5s ease;
-}
+} */
 
 .text {
 	color: var(--color-pulp);
@@ -132,7 +132,7 @@ nav .content-nav .social a svg {
 	justify-content: center;
 	align-self: center;
 	height: 4px;
-	background-color: var(--color-leather);
+	background-color: var(--color-primary);
 	display: block;
 	border-radius: 5px;
 	transition: all 0.4s ease-in-out;
