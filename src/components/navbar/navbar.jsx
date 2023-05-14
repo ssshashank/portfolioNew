@@ -34,7 +34,7 @@ const Navbar = () => {
 								width='44'
 								height='9'
 								rx='0'
-								fill='#CFCA16'
+								fill='#e7e8d1'
 								animate={{
 									x: [10, -10, 10],
 									transition: {
@@ -49,7 +49,7 @@ const Navbar = () => {
 								cx='55.5'
 								cy='4.5'
 								r='4.5'
-								fill='#CFCA16'
+								fill='#e7e8d1'
 								animate={{
 									opacity: 1,
 									scale: 1,
@@ -71,7 +71,7 @@ const Navbar = () => {
 					</a>
 				</div>
 
-				<div className='menu'>
+				{/* <div className='menu'>
 					<input type='checkbox' id='checkbox4' className={checkBoxClass} />
 					<label htmlFor='checkbox4'>
 						<motion.div
@@ -95,9 +95,9 @@ const Navbar = () => {
 							<span className={bar5Class}></span>
 						</motion.div>
 					</label>
-				</div>
+				</div> */}
 			</nav>
-			<Sidebar showSidebar={showSidebar} toggleSidebar={setSidebar} />
+			{/* <Sidebar showSidebar={showSidebar} toggleSidebar={setSidebar} /> */}
 		</div>
 	);
 };

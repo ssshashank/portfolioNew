@@ -1,19 +1,16 @@
 import { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Power3 } from "gsap";
+import { BASE_UTILS } from "src/utils/baseUtils";
 import "./loader.css";
-import { AnimatePresence, motion, useCycle } from "framer-motion";
-import { gsap, CSSPlugin, Expo, Power3, Circ, Bounce } from "gsap";
-gsap.registerPlugin(CSSPlugin);
 
-const Loader = ({ isLoading, children }) => {
+const Loader = ({ children }) => {
 	const [counter, setCounter] = useState(0);
 
 	const updateCountHandler = useCallback(() => {
-		const count = setInterval(() => {
-			setCounter((counter) =>
-				counter < 100 ? counter + 15 : (clearInterval(count), setCounter(100))
-			);
-		}, 1000);
-		() => clearInterval(count);
+		setCounter((counter) =>
+			counter < 100 ? BASE_UTILS.getRandomIntInclusive(counter) : 100
+		);
 	}, []);
 
 	const loadingVariants = {
@@ -21,14 +18,13 @@ const Loader = ({ isLoading, children }) => {
 			height: "100vh",
 			position: "absolute",
 			right: 0,
-			top: "0%",
+			top: 0,
 		},
 		final: {
-			height: 0,
-			zIndex: 0,
+			height: counter === 100 && 0,
 			transition: {
 				duration: 1.5,
-				delay: 0.5,
+				delay: counter === 100 && 1,
 				ease: Power3.easeOut,
 			},
 		},
@@ -38,29 +34,23 @@ const Loader = ({ isLoading, children }) => {
 		initial: {
 			position: "absolute",
 			right: 0,
+			opacity: 0,
 			bottom: 0,
-			// opacity: 0,
 		},
 		final: {
 			right: 0,
-			bottom: ["0%", "25%", "50%", "75%", "100%"],
-			opacity:
-				counter === 0 ||
-				counter === 30 ||
-				counter === 60 ||
-				counter === 90 ||
-				counter === 100
-					? 1
-					: 0,
+			bottom: counter <= 10 ? 0 : `${counter - 10}%`,
+			opacity: counter === 100 ? 0 : 1,
 			transition: {
-				duration: 4,
-				delay: 1,
+				duration: 2,
+				delay: 0,
 				ease: Power3.easeOut,
 			},
 		},
 	};
 	useEffect(() => {
-		updateCountHandler();
+		const interval = setInterval(updateCountHandler, 1000);
+		return () => clearInterval(interval);
 	}, [updateCountHandler]);
 	return (
 		<AnimatePresence>
@@ -78,6 +68,7 @@ const Loader = ({ isLoading, children }) => {
 					{counter}
 				</motion.div>
 			</motion.div>
+			{counter === 100 && children}
 		</AnimatePresence>
 	);
 };
