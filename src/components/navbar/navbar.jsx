@@ -34,7 +34,7 @@ const Navbar = () => {
 								width='44'
 								height='9'
 								rx='0'
-								fill='#e7e8d1'
+								fill='#cfca16'
 								animate={{
 									x: [10, -10, 10],
 									transition: {
@@ -49,7 +49,7 @@ const Navbar = () => {
 								cx='55.5'
 								cy='4.5'
 								r='4.5'
-								fill='#e7e8d1'
+								fill='#cfca16'
 								animate={{
 									opacity: 1,
 									scale: 1,

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Power3 } from "gsap";
+import { Linear, Power3 } from "gsap";
 import { BASE_UTILS } from "src/utils/baseUtils";
 import "./loader.css";
 
@@ -26,6 +26,9 @@ const Loader = ({ children }) => {
 				duration: 1.5,
 				delay: counter === 100 && 1,
 				ease: Power3.easeOut,
+				transition: {
+					delayChildren: 3.5,
+				},
 			},
 		},
 	};
@@ -68,7 +71,23 @@ const Loader = ({ children }) => {
 					{counter}
 				</motion.div>
 			</motion.div>
-			{counter === 100 && children}
+			{counter === 100 && (
+				<motion.div
+					initial={{
+						visibility: "hidden",
+					}}
+					animate={{
+						visibility: "visible",
+						// x: [10, -10, 10],
+						transition: {
+							duration: 1.3,
+							delay: 3,
+							ease: Linear.easeInOut,
+						},
+					}}>
+					{children}
+				</motion.div>
+			)}
 		</AnimatePresence>
 	);
 };
