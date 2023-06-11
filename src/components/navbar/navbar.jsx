@@ -3,7 +3,7 @@ import NavbarStyleModule from "./navbar.module.css";
 import Sidebar from "@components/sidebar/sidebar";
 import { motion, spring } from "framer-motion";
 import { useState } from "react";
-import { Elastic } from "gsap";
+import { Linear, Power3 } from "gsap";
 
 const Navbar = () => {
 	const [showSidebar, setSidebar] = useState(false);
@@ -19,6 +19,17 @@ const Navbar = () => {
 	);
 	const bar4Class = classNames("bar bar4");
 	const bar5Class = classNames("bar bar5");
+	const translateTitle = {
+		initial: { x: -50 },
+		final: {
+			x: 0,
+			transition: {
+				duration: 1,
+				delay: 3,
+				ease: Power3.easeOut,
+			},
+		},
+	};
 	return (
 		<div>
 			{/* <nav className={navClass}>
@@ -53,10 +64,14 @@ const Navbar = () => {
 				</div>
 			</nav> */}
 			<nav className={NavbarStyleModule.nav}>
-				<div className={NavbarStyleModule.combineTitle}>
+				<motion.div
+					className={NavbarStyleModule.combineTitle}
+					variants={translateTitle}
+					initial={"initial"}
+					animate={"final"}>
 					<p className={NavbarStyleModule.title}>S</p>
 					<p className={NavbarStyleModule.titleLines}>sHASHANK</p>
-				</div>
+				</motion.div>
 			</nav>
 			{/* <Sidebar showSidebar={showSidebar} toggleSidebar={setSidebar} /> */}
 		</div>

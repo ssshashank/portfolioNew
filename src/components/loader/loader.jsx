@@ -80,6 +80,7 @@ const Loader = ({ children }) => {
 					onEnded={() => console.log("ended")}
 					className={LoaderStyleModule.counter}>
 					{counter}
+					<span className={LoaderStyleModule.percentage}>%</span>
 				</motion.div>
 			</motion.div>
 			{counter === 100 && (
@@ -89,11 +90,9 @@ const Loader = ({ children }) => {
 					}}
 					animate={{
 						visibility: "visible",
-						// x: [10, -10, 10],
 						transition: {
 							duration: 1.3,
 							delay: 3,
-							ease: Linear.easeInOut,
 						},
 					}}>
 					{children}

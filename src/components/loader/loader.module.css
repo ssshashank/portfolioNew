@@ -9,7 +9,12 @@
 
 .counter {
 	font-size: 5.5rem;
-	font-weight: 500;
+	font-weight: 200;
+	color: var(--color-primary);
+	font-family: "Inter", sans-serif;
+}
+.percentage {
+	font-size: 2rem;
 	color: var(--color-primary);
 	font-family: "Inter", sans-serif;
 }

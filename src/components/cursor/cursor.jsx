@@ -6,6 +6,7 @@ import "./cursor.css";
 const CustomCursor = () => {
 	const cursorRef = useRef(null);
 	const { x, y } = useFollowPointer(cursorRef);
+
 	return (
 		<motion.div
 			key='cursorAnimate'
