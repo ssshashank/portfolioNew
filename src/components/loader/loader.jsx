@@ -7,6 +7,7 @@ import LoaderStyleModule from "./loader.module.css";
 const Loader = ({ children }) => {
 	const [counter, setCounter] = useState(0);
 
+	const [isLoading, setIsLoading] = useState(true);
 	const updateCountHandler = useCallback(() => {
 		setCounter((counter) =>
 			counter < 100 ? BASE_UTILS.getRandomIntInclusive(counter) : 100
@@ -54,6 +55,7 @@ const Loader = ({ children }) => {
 		const interval = setInterval(updateCountHandler, 1000);
 		return () => clearInterval(interval);
 	}, [updateCountHandler]);
+
 	return (
 		<>
 			<motion.div

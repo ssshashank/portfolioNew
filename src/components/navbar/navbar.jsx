@@ -20,11 +20,11 @@ const Navbar = () => {
 	const bar4Class = classNames("bar bar4");
 	const bar5Class = classNames("bar bar5");
 	const translateTitle = {
-		initial: { x: -50 },
+		initial: { x: -200 },
 		final: {
 			x: 0,
 			transition: {
-				duration: 1,
+				duration: 0.8,
 				delay: 3,
 				ease: Power3.easeOut,
 			},

@@ -1,6 +1,6 @@
 import "./App.css";
 import Layout from "./layout/layout";
-
+import CustomCursor from "@components/cursor/cursor";
 import WithLoader from "@components/loader/loader";
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
 		<div className='App'>
 			<WithLoader>
 				<Layout></Layout>
+				<CustomCursor />
 			</WithLoader>
 		</div>
 	);
