@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Linear, Power3 } from "gsap";
-import { BASE_UTILS } from "src/utils/baseUtils";
-import "./loader.css";
+import { BASE_UTILS } from "@utils/baseUtils";
+import LoaderStyleModule from "./loader.module.css";
 
 const Loader = ({ children }) => {
 	const [counter, setCounter] = useState(0);
@@ -22,13 +22,12 @@ const Loader = ({ children }) => {
 		},
 		final: {
 			height: counter === 100 && 0,
+			opacity: counter === 100 ? 0 : 1,
+
 			transition: {
 				duration: 1.5,
 				delay: counter === 100 && 1,
 				ease: Power3.easeOut,
-				transition: {
-					delayChildren: 3.5,
-				},
 			},
 		},
 	};
@@ -56,18 +55,30 @@ const Loader = ({ children }) => {
 		return () => clearInterval(interval);
 	}, [updateCountHandler]);
 	return (
-		<AnimatePresence>
+		<>
 			<motion.div
 				key={"loader"}
-				className='loadingContainer'
+				className={LoaderStyleModule.loadingContainer}
 				variants={loadingVariants}
 				initial={"initial"}
 				animate={counter === 100 && "final"}>
+				<motion.div className={LoaderStyleModule.nav}>
+					<div className={LoaderStyleModule.combineTitle}>
+						<p className={LoaderStyleModule.title}>SsHAsHANK</p>
+					</div>
+					<div className={LoaderStyleModule.combineTitle}>
+						<p className={LoaderStyleModule.title}>Portoflio</p>
+						<p className={LoaderStyleModule.titleLines}>
+							&nbsp;&copy;{new Date().getFullYear()}
+						</p>
+					</div>
+				</motion.div>
 				<motion.div
 					variants={counterVariants}
 					initial={"initial"}
 					animate={"final"}
-					className='counter'>
+					onEnded={() => console.log("ended")}
+					className={LoaderStyleModule.counter}>
 					{counter}
 				</motion.div>
 			</motion.div>
@@ -88,7 +99,7 @@ const Loader = ({ children }) => {
 					{children}
 				</motion.div>
 			)}
-		</AnimatePresence>
+		</>
 	);
 };
 

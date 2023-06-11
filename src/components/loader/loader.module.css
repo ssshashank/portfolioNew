@@ -1,0 +1,45 @@
+.loadingContainer {
+	height: 100vh;
+	width: 100%;
+	background: var(--color-dark);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.counter {
+	font-size: 5.5rem;
+	font-weight: 500;
+	color: var(--color-primary);
+	font-family: "Inter", sans-serif;
+}
+.nav {
+	width: 85%;
+	padding: 1vw 0;
+	margin: auto;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	animation: opacity-menu 1200ms;
+}
+.combineTitle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-dark);
+}
+.titleLines {
+	font-family: "Major Mono Display", monospace;
+	color: var(--color-primary);
+	font-size: var(--fontsize-tough);
+	mix-blend-mode: difference;
+}
+
+.title {
+	font-family: "Major Mono Display", monospace;
+	letter-spacing: 1px;
+	color: var(--color-primary);
+	font-size: var(--fontsize-tough);
+	mix-blend-mode: difference;
+}

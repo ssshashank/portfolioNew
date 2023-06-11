@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import "./navbar.css";
+import NavbarStyleModule from "./navbar.module.css";
 import Sidebar from "@components/sidebar/sidebar";
 import { motion, spring } from "framer-motion";
 import { useState } from "react";
@@ -21,57 +21,12 @@ const Navbar = () => {
 	const bar5Class = classNames("bar bar5");
 	return (
 		<div>
-			<nav className={navClass}>
+			{/* <nav className={navClass}>
 				<div className='logo'>
-					<a href='#'>
-						<motion.svg
-							width='100'
-							height='9'
-							viewBox='0 0 60 9'
-							fill='none'
-							xmlns='http://www.w3.org/2000/svg'>
-							<motion.rect
-								width='44'
-								height='9'
-								rx='0'
-								fill='#cfca16'
-								animate={{
-									x: [10, -10, 10],
-									transition: {
-										duration: 1.3,
-										ease: "linear",
-										repeat: Infinity,
-										repeatType: "mirror",
-									},
-								}}
-							/>
-							<motion.circle
-								cx='55.5'
-								cy='4.5'
-								r='4.5'
-								fill='#cfca16'
-								animate={{
-									opacity: 1,
-									scale: 1,
-									x: [0, 10, 0],
-								}}
-								transition={{
-									duration: 1.3,
-									easings: Elastic.easeIn,
-									repeat: Infinity,
-									repeatType: "loop",
-									damping: 5,
-									mass: 0.5,
-									type: spring,
-									bounce: 0.25,
-									restDelta: 0.001,
-								}}
-							/>
-						</motion.svg>
-					</a>
+					
 				</div>
 
-				{/* <div className='menu'>
+				<div className='menu'>
 					<input type='checkbox' id='checkbox4' className={checkBoxClass} />
 					<label htmlFor='checkbox4'>
 						<motion.div
@@ -95,7 +50,13 @@ const Navbar = () => {
 							<span className={bar5Class}></span>
 						</motion.div>
 					</label>
-				</div> */}
+				</div>
+			</nav> */}
+			<nav className={NavbarStyleModule.nav}>
+				<div className={NavbarStyleModule.combineTitle}>
+					<p className={NavbarStyleModule.title}>S</p>
+					<p className={NavbarStyleModule.titleLines}>sHASHANK</p>
+				</div>
 			</nav>
 			{/* <Sidebar showSidebar={showSidebar} toggleSidebar={setSidebar} /> */}
 		</div>

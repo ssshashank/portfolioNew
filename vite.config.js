@@ -11,6 +11,7 @@ export default defineConfig({
 			"@components": path.resolve(__dirname, "./src/components"),
 			"@screens": path.resolve(__dirname, "./src/screens"),
 			"@hooks": path.resolve(__dirname, "./src/hooks"),
+			"@utils": path.resolve(__dirname, "./src/utils"),
 		},
 	},
 	plugins: [react(), jsconfigPaths(), svgr()],

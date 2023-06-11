@@ -75,6 +75,32 @@ nav .content-nav .social a:before {
 	opacity: 0;
 	transition: transform 300ms, opacity 200ms;
 }
+.nav {
+	width: 85%;
+	padding: 1vw 0;
+	margin: auto;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	animation: opacity-menu 1200ms;
+}
+.combineTitle {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+}
+.titleLines {
+	font-family: "Major Mono Display", monospace;
+	color: var(--color-primary);
+	font-size: var(--fontsize-tough);
+	mix-blend-mode: difference;
+}
+.title {
+	font-family: "Major Mono Display", monospace;
+	color: var(--color-primary);
+	font-size: var(--fontsize-tough);
+	mix-blend-mode: difference;
+}
 
 nav .content-nav .social a:hover:before {
 	transform: scale(1);
