@@ -10,7 +10,7 @@
 	--color-light-teal: #a7beae;
 	--color-magento: #f25824;
 	--color-primaryDark: #110525;
-	--color-purity: #fff;
+	--color-white: #fff;
 	--color-dark: #000;
 	--color-ebony: #5c5b5b;
 	--color-darkFade: #181817;
@@ -19,6 +19,7 @@
 	--color-raven: #050301;
 	--color-leather: #0b0705;
 	--color-pulp: #f7edc9;
+	--color-olive: #adff2f;
 	--color-AthsSpecial: #ebe5cd;
 	--color-rangitoto: #363f2c;
 	--color-naturalGrey: #969285;
@@ -46,9 +47,10 @@
 	font-family: "Inter", sans-serif;
 	font-family: "Ubuntu", sans-serif;
 	font-family: "Oranienbaum", serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 }
 body {
-	background: var(--color-primary);
+	/* background: var(--color-primary); */
 	/* color: var(--color-secondary); */
 	cursor: pointer;
 }
